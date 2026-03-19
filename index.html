@@ -1073,9 +1073,9 @@
     <p class="contact-sub reveal reveal-delay-2">
       Open to data analyst roles, freelance projects, and interesting collaborations.
     </p>
-    <a href="/cdn-cgi/l/email-protection#1365767661667166607a7d766060242453747e727a7f3d707c7e" class="contact-email reveal reveal-delay-3">
-      <span class="__cf_email__" data-cfemail="9aecffffe8eff8efe9f3f4ffe9e9adaddafdf7fbf3f6b4f9f5f7">[email&#160;protected]</span>
-    </a>
+    <a href="#" id="contact-email-link" class="contact-email reveal reveal-delay-3">
+  veerubusiness77@gmail.com
+</a>
     <div class="social-links reveal reveal-delay-4">
       <a href="https://github.com/veerushakya" target="_blank" class="social-link">GitHub</a>
       <a href="https://www.linkedin.com/in/veeru-shakya-4a86a5348/" target="_blank" class="social-link">LinkedIn</a>
@@ -1170,6 +1170,9 @@
       });
     });
 
+ // Fix email link
+var e = document.getElementById('contact-email-link');
+if(e){ e.href = 'mailto:' + 'veerubusiness77' + '@' + 'gmail.com'; }
   </script>
 </body>
 </html>
