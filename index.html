@@ -46,6 +46,19 @@
       --mono:      'JetBrains Mono', monospace;
     }
 
+    /* ── Light Mode ── */
+    body.light {
+      --bg:        #f5f3ef;
+      --surface:   #ede9e3;
+      --card:      #e8e3db;
+      --border:    rgba(0,0,0,0.08);
+      --accent:    #c47a10;
+      --accent2:   #9a5a0a;
+      --text:      #1a1814;
+      --muted:     #6b6560;
+      --dim:       #b0a898;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -735,6 +748,28 @@
     }
 
     /* ── Resume ── */
+    /* ── Theme Toggle ── */
+    .theme-toggle {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      cursor: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(20deg);
+    }
+    /* Fix code preview bg in light mode */
+    body.light .project-code-preview { background: #1a1a2e; }
+    body.light .project-code-preview::after { background: linear-gradient(to bottom, transparent, #1a1a2e); }
+
     @media (max-width: 768px) {
       nav { padding: 1.2rem 5vw; }
       .nav-links { gap: 1.4rem; }
@@ -768,6 +803,7 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">☀️</button>
   </nav>
 
   <!-- Hero -->
@@ -1253,6 +1289,20 @@
 
     revealEls.forEach(el => revealObserver.observe(el));
 
+
+    // ── Theme Toggle ──
+    const toggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light');
+      toggleBtn.textContent = '🌙';
+    }
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      toggleBtn.textContent = isLight ? '🌙' : '☀️';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
     // ── Active Nav Highlight ──
     const sections = document.querySelectorAll('section[id]');
