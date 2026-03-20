@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6PRS3ZZYY"></script>
   <script>
@@ -460,6 +459,34 @@
     }
     .project-card:hover .project-num { color: rgba(232,160,32,0.1); }
 
+    /* SQL Code Preview */
+    .project-code-preview {
+      width: calc(100% + 4.4rem);
+      margin: -2.2rem -2.2rem 1.8rem -2.2rem;
+      background: #0a0a14;
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 1.8rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      line-height: 1.9;
+      overflow: hidden;
+      height: 200px;
+      position: relative;
+    }
+    .project-code-preview::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 70px;
+      background: linear-gradient(to bottom, transparent, #0a0a14);
+    }
+    .code-line {
+      display: block;
+      color: #6a7fa8;
+      white-space: pre;
+    }
+    .sql-kw { color: #e8a020; }
+    .sql-fn { color: #7ec8e3; }
+
     /* Project image */
     .project-img-wrap {
       width: calc(100% + 4.4rem);
@@ -910,8 +937,18 @@
       </a>
 
       <a href="https://github.com/veerushakya/Agency_Analytics_MOM" target="_blank" class="project-card reveal reveal-delay-1">
-        <div class="project-img-wrap">
-          <img src="./screenshots/Agency_Analytics_MOM.png" alt="Agency Analytics MOM" />
+        <div class="project-code-preview">
+          <span class="code-line"><span class="sql-kw">WITH</span> raw_client_data <span class="sql-kw">AS</span> (</span>
+          <span class="code-line">  <span class="sql-kw">SELECT</span> agent_id, month,</span>
+          <span class="code-line">  <span class="sql-fn">SUM</span>(revenue) <span class="sql-kw">OVER</span> (</span>
+          <span class="code-line">    <span class="sql-kw">PARTITION BY</span> agent_id</span>
+          <span class="code-line">    <span class="sql-kw">ORDER BY</span> month</span>
+          <span class="code-line">  ) <span class="sql-kw">AS</span> cumulative_revenue,</span>
+          <span class="code-line">  <span class="sql-fn">LAG</span>(revenue) <span class="sql-kw">OVER</span> (</span>
+          <span class="code-line">    <span class="sql-kw">PARTITION BY</span> agent_id</span>
+          <span class="code-line">    <span class="sql-kw">ORDER BY</span> month</span>
+          <span class="code-line">  ) <span class="sql-kw">AS</span> prev_month_revenue</span>
+          <span class="code-line"><span class="sql-kw">FROM</span> agency_data</span>
         </div>        <div class="project-num">02</div>
         <span class="project-tag">SQL Analytics</span>
         <h3 class="project-title">Agency Analytics MOM</h3>
