@@ -748,6 +748,183 @@
     }
 
     /* ── Resume ── */
+    /* ── Case Study ── */
+    #casestudy { background: var(--surface); }
+    .cs-hero {
+      margin-top: 3rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .cs-hero-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: brightness(0.8);
+    }
+    .cs-hero-meta {
+      padding: 2rem 2.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+    }
+    .cs-meta-item { }
+    .cs-meta-key {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .cs-meta-val {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .cs-sidebar { position: sticky; top: 7rem; }
+    .cs-toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+    .cs-toc-title {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-toc a {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .cs-toc a:hover { color: var(--accent); padding-left: 0.4rem; }
+    .cs-toc a:last-child { border-bottom: none; }
+    .cs-content { }
+    .cs-block {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .cs-block-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .cs-block h3 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .cs-block p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .cs-block p strong { color: var(--text); font-weight: 500; }
+    .cs-block p:last-child { margin-bottom: 0; }
+    .cs-steps {
+      counter-reset: step;
+      margin-top: 1.2rem;
+    }
+    .cs-step {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.4rem;
+      align-items: flex-start;
+    }
+    .cs-step-num {
+      counter-increment: step;
+      min-width: 28px; height: 28px;
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .cs-step-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .cs-step-text strong { color: var(--text); font-weight: 500; }
+    .cs-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .cs-result-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .cs-result-card:hover { border-color: var(--accent); }
+    .cs-result-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .cs-result-desc {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+    .cs-code-block {
+      background: #0a0a14;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.6rem;
+      margin-top: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      line-height: 1.9;
+      overflow-x: auto;
+    }
+    .cs-code-block .sql-kw { color: #e8a020; }
+    .cs-code-block .sql-fn { color: #7ec8e3; }
+    .cs-code-block .sql-str { color: #98c379; }
+    .cs-code-block .sql-cm { color: #4a5568; }
+
     /* ── Theme Toggle ── */
     .theme-toggle {
       width: 38px; height: 38px;
@@ -780,6 +957,9 @@
       .resume-layout { grid-template-columns: 1fr; gap: 2rem; }
       .resume-left { position: static; }
       .cert-grid { grid-template-columns: 1fr; }
+      .cs-body { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; }
+      .cs-results { grid-template-columns: 1fr; }
       body { cursor: auto; }
       #cursor { display: none; }
     }
@@ -800,6 +980,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#casestudy">Case Study</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1072,9 +1253,171 @@
 
   <div class="section-divider"></div>
 
+  <!-- Case Study -->
+  <section id="casestudy">
+    <div class="section-label reveal">04 — Case Study</div>
+    <h2 class="section-title reveal reveal-delay-1">How I built the<br><em>YouTube ETL Pipeline</em></h2>
+
+    <div class="cs-hero reveal reveal-delay-2">
+      <img src="./screenshots/Youtube_Agency_ETL.png" alt="YouTube Agency ETL Pipeline" class="cs-hero-img" />
+      <div class="cs-hero-meta">
+        <div class="cs-meta-item">
+          <div class="cs-meta-key">Type</div>
+          <div class="cs-meta-val">End-to-end ETL Pipeline</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-key">Stack</div>
+          <div class="cs-meta-val">Python · Pandas · PostgreSQL</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-key">Duration</div>
+          <div class="cs-meta-val">Solo project</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-key">GitHub</div>
+          <div class="cs-meta-val"><a href="https://github.com/veerushakya/YouTube-Agency-Data-Pipeline" target="_blank" style="color:var(--accent); text-decoration:none;">View Repository →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-body">
+
+      <!-- Sidebar TOC -->
+      <div class="cs-sidebar reveal">
+        <div class="cs-toc">
+          <div class="cs-toc-title">Contents</div>
+          <a href="#cs-problem">The Problem</a>
+          <a href="#cs-approach">My Approach</a>
+          <a href="#cs-build">What I Built</a>
+          <a href="#cs-challenges">Challenges</a>
+          <a href="#cs-results">Results</a>
+          <a href="#cs-learned">What I Learned</a>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <div class="cs-block reveal" id="cs-problem">
+          <div class="cs-block-label">01 — The Problem</div>
+          <h3>A creator agency drowning in spreadsheets</h3>
+          <p>
+            YouTube creator agencies manage revenue across dozens of creators — Adsense payouts, sponsor deals, agency fees. When all of that lives in raw CSVs, <strong>someone has to manually clean and consolidate it every single month.</strong>
+          </p>
+          <p>
+            The data was messy: missing revenue values, inconsistent formatting, null sponsor entries, duplicate rows. It wasn't analysis-ready — it needed hours of manual work before anyone could even ask a business question.
+          </p>
+          <p>
+            The goal was simple: <strong>eliminate that manual work entirely</strong> and deliver a clean, structured dataset straight into a database where it can be queried immediately.
+          </p>
+        </div>
+
+        <div class="cs-block reveal" id="cs-approach">
+          <div class="cs-block-label">02 — My Approach</div>
+          <h3>Think before you code</h3>
+          <p>
+            Before writing a single line, I mapped out the three phases the pipeline needed to handle:
+          </p>
+          <div class="cs-steps">
+            <div class="cs-step">
+              <div class="cs-step-num">1</div>
+              <div class="cs-step-text"><strong>Ingestion</strong> — read raw creator CSVs reliably, regardless of formatting inconsistencies</div>
+            </div>
+            <div class="cs-step">
+              <div class="cs-step-num">2</div>
+              <div class="cs-step-text"><strong>Cleaning</strong> — handle nulls intelligently (zero for numeric fields, "No Sponsor" for missing brands), strip whitespace, standardise types</div>
+            </div>
+            <div class="cs-step">
+              <div class="cs-step-num">3</div>
+              <div class="cs-step-text"><strong>Loading</strong> — inject the clean data into PostgreSQL in a way that's repeatable and safe to run multiple times</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-block reveal" id="cs-build">
+          <div class="cs-block-label">03 — What I Built</div>
+          <h3>A three-phase Python pipeline</h3>
+          <p>The core logic across all three phases looked like this:</p>
+          <div class="cs-code-block">
+<span class="sql-cm"># Phase 1 — Ingestion</span>
+df_raw = pd.<span class="sql-fn">read_csv</span>(<span class="sql-str">'creator_raw_data.csv'</span>)
+
+<span class="sql-cm"># Phase 2 — Cleaning</span>
+df_clean = df_raw.<span class="sql-fn">dropna</span>(subset=[<span class="sql-str">'Views'</span>])
+df_clean[<span class="sql-str">'Sponsor_Payout_USD'</span>] = df_clean[<span class="sql-str">'Sponsor_Payout_USD'</span>].<span class="sql-fn">fillna</span>(0)
+df_clean[<span class="sql-str">'Sponsor_Brand'</span>] = df_clean[<span class="sql-str">'Sponsor_Brand'</span>].<span class="sql-fn">fillna</span>(<span class="sql-str">'No Sponsor'</span>)
+df_clean[<span class="sql-str">'Total_Revenue'</span>] = df_clean[<span class="sql-str">'Adsense_Revenue_USD'</span>] + df_clean[<span class="sql-str">'Sponsor_Payout_USD'</span>]
+
+<span class="sql-cm"># Phase 3 — Load into PostgreSQL</span>
+engine = <span class="sql-fn">create_engine</span>(db_string)
+df_clean.<span class="sql-fn">to_sql</span>(<span class="sql-str">'creator_finances'</span>, engine, if_exists=<span class="sql-str">'replace'</span>)
+          </div>
+          <p style="margin-top:1.2rem;">
+            The <strong>feature engineering step</strong> was the most valuable addition — computing <code style="font-family:var(--mono); font-size:0.8rem; color:var(--accent);">Total_Video_Revenue_USD</code> and <code style="font-family:var(--mono); font-size:0.8rem; color:var(--accent);">Agency_Earnings_USD</code> meant downstream queries didn't need to recalculate these every time.
+          </p>
+        </div>
+
+        <div class="cs-block reveal" id="cs-challenges">
+          <div class="cs-block-label">04 — Challenges</div>
+          <h3>What didn't go smoothly</h3>
+          <div class="cs-steps">
+            <div class="cs-step">
+              <div class="cs-step-num">!</div>
+              <div class="cs-step-text"><strong>Null handling strategy</strong> — not all nulls mean the same thing. A null sponsor payout means £0, but a null view count means the row is invalid and should be dropped. Getting this logic right was critical.</div>
+            </div>
+            <div class="cs-step">
+              <div class="cs-step-num">!</div>
+              <div class="cs-step-text"><strong>Database connection security</strong> — the pipeline needed to handle connection failures gracefully and never expose credentials in the codebase.</div>
+            </div>
+            <div class="cs-step">
+              <div class="cs-step-num">!</div>
+              <div class="cs-step-text"><strong>Idempotency</strong> — using <code style="font-family:var(--mono); font-size:0.8rem; color:var(--accent);">if_exists='replace'</code> meant the pipeline could be safely re-run without duplicating data.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-block reveal" id="cs-results">
+          <div class="cs-block-label">05 — Results</div>
+          <h3>What it delivered</h3>
+          <div class="cs-results">
+            <div class="cs-result-card">
+              <div class="cs-result-num">~0</div>
+              <div class="cs-result-desc">Manual hours per month</div>
+            </div>
+            <div class="cs-result-card">
+              <div class="cs-result-num">3</div>
+              <div class="cs-result-desc">Revenue streams tracked</div>
+            </div>
+            <div class="cs-result-card">
+              <div class="cs-result-num">100%</div>
+              <div class="cs-result-desc">Repeatable & automated</div>
+            </div>
+          </div>
+          <p style="margin-top:1.4rem;">
+            The pipeline replaced what was previously a manual monthly process. Data now lands in PostgreSQL clean, typed correctly, and ready for any downstream query or dashboard to consume immediately.
+          </p>
+        </div>
+
+        <div class="cs-block reveal" id="cs-learned">
+          <div class="cs-block-label">06 — What I Learned</div>
+          <h3>The real lesson</h3>
+          <p>
+            The technical skills — Pandas, SQLAlchemy, null handling — were learnable. The bigger lesson was about <strong>thinking like an engineer before thinking like an analyst.</strong>
+          </p>
+          <p>
+            A good pipeline isn't just one that works once. It's one that works every time, fails clearly when something goes wrong, and doesn't need someone to babysit it. That mindset shift — from "does this produce the right answer?" to "is this production-ready?" — is what this project taught me most.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- Resume -->
   <section id="resume">
-    <div class="section-label reveal">04 — Resume</div>
+    <div class="section-label reveal">05 — Resume</div>
     <h2 class="section-title reveal reveal-delay-1">Experience &amp;<br><em>credentials</em></h2>
 
     <div class="resume-layout">
@@ -1215,7 +1558,7 @@
 
   <!-- Contact -->
   <section id="contact">
-    <div class="section-label reveal">05 — Contact</div>
+    <div class="section-label reveal">06 — Contact</div>
     <h2 class="section-title reveal reveal-delay-1">Let's build<br>something <em>great</em></h2>
     <p class="contact-sub reveal reveal-delay-2">
       Open to data analyst roles, freelance projects, and interesting collaborations.
